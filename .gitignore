@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+
+# Logs
+*.log
+logs/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Banco de dados local
+*.sqlite3
+recorte.db
+
+# ChromeDriver e Selenium
+chromedriver*
+selenium-screenshots/
+
+# Deploy
+*.zip
+runtime.txt
