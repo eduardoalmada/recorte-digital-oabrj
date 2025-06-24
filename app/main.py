@@ -1,14 +1,9 @@
-from flask import Flask
-from dotenv import load_dotenv
-import os
+from flask import Blueprint, jsonify
+from app.tasks import exemplo_tarefa_celery
 
-load_dotenv()
+routes = Blueprint('routes', __name__)
 
-app = Flask(__name__)
-
-@app.route("/")
-def index():
-    return "Recorte Digital OABRJ rodando em produção!"
-
-if __name__ == "__main__":
-    app.run(debug=True)
+@routes.route('/testar-celery', methods=['GET'])
+def testar_celery():
+    exemplo_tarefa_celery.delay()
+    return jsonify({'status': 'Tarefa enviada para o worker Celery!'})
